@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WLAN Connector</string>
+    <string-array name="EapMethod">
+        <item>PEAP</item>
+        <item>TTLS</item>
+    </string-array>
+
+    <integer-array name="EapMethodValues">
+        <item>0</item>
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="Phase2Method">
+        <item>MSCHAPV2</item>
+        <item>GTC</item>
+        <item>MSCHAP</item>
+        <item>PAP</item>
+    </string-array>
+
+    <integer-array name="Phase2MethodValues">
+        <item>3</item>
+        <item>4</item>
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+</resources>
