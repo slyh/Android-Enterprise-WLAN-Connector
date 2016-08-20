@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/abc_select_dialog_padding_start_material"
+    android:paddingRight="@dimen/abc_select_dialog_padding_start_material"
+    android:padding="@dimen/abc_dialog_padding_material">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.DialogWindowTitle"
+        android:text="@string/dialog_addnetwork_title"
+        android:id="@+id/tv_addnetwork_title"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        ><requestFocus /></TextView>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_ssid"
+                android:id="@+id/tv_addnetwork_ssid"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_addnetwork_ssid"
+                android:lines="1"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_eapmethod"
+                android:id="@+id/tv_addnetwork_eapmethod"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_addnetwork_eapmethod"
+                android:entries="@array/EapMethod"
+                android:entryValues="@array/EapMethodValues" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_phase2authentication"
+                android:id="@+id/tv_addnetwork_phase2authentication"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_addnetwork_phase2authentication"
+                android:entries="@array/Phase2Method"
+                android:entryValues="@array/Phase2MethodValues" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_cacertificate"
+                android:id="@+id/tv_addnetwork_cacertificate"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_addnetwork_cacertificate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_subjectname"
+                android:id="@+id/tv_addnetwork_subjectname"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_addnetwork_subjectname"
+                android:lines="1"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_identity"
+                android:id="@+id/tv_addnetwork_identity"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_addnetwork_identity"
+                android:lines="1"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_anonymousidentity"
+                android:id="@+id/tv_addnetwork_anonymousidentity"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_addnetwork_anonymousidentity"
+                android:lines="1"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_addnetwork_password"
+                android:id="@+id/tv_addnetwork_password"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:lineSpacingMultiplier="20"
+                android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_addnetwork_password"
+                android:lines="1"
+                android:maxLines="1"
+                android:password="false"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package me.slyh.wlanconnector;
+package me.slyh.androidenterprisewlanconnector;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
