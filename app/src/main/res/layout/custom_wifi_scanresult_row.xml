@@ -24,9 +24,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:text="Large Text"
-            android:id="@+id/row_ssid" />
+            android:id="@+id/row_ssid"
+            android:textColor="@color/primary_text_default_material_light" />
 
         <TextView
             android:layout_width="wrap_content"

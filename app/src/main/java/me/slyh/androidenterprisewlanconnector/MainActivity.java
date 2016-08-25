@@ -23,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -167,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
             if(scanresult_SSID.size() == 0) {
                 TextView tv_wifi_disabled_hint = (TextView) findViewById(R.id.wifi_disabled_hint);
                 tv_wifi_disabled_hint.setText(getResources().getText(R.string.no_wifi_found));
+                if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    tv_wifi_disabled_hint.setText(getResources().getText(R.string.sb_ask_user_location_permission));
+                }
                 findViewById(R.id.layout_content_main).setVisibility(View.GONE);
                 findViewById(R.id.layout_wifi_disabled).setVisibility(View.VISIBLE);
             }
@@ -250,11 +254,12 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog dialog_addnetwork = builder.create();
         dialog_addnetwork.show();
+        dialog_addnetwork.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         Spinner caList = (Spinner) dialog_addwifi_view.findViewById(R.id.sp_addnetwork_cacertificate);
         Set DNSet = DNList.entrySet();
         Iterator iterator = DNSet.iterator();
-        ArrayAdapter<String> caDNList = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        ArrayAdapter<String> caDNList = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         while(iterator.hasNext()) {
             Map.Entry map_entry = (Map.Entry)iterator.next();
             caDNList.add(map_entry.getKey().toString());
@@ -398,12 +403,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadKeyStore() {
         try {
-            Log.i("KeyStore", "Opening keystore");
+            //Log.i("KeyStore", "Opening keystore");
             ks = KeyStore.getInstance("androidCAStore");
             ks.load(null, null);
             Enumeration<?> aliases = ks.aliases();
             while (aliases.hasMoreElements()) {
-                Log.i("KeyStore", "Debug");
+                //Log.i("KeyStore", "Debug");
                 String alias = (String) aliases.nextElement();
                 X509Certificate cert = (X509Certificate) ks.getCertificate(alias);
                 Matcher m = Pattern.compile("CN=([^,]*)").matcher(cert.getSubjectDN().getName());

@@ -2,24 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingLeft="@dimen/abc_select_dialog_padding_start_material"
-    android:paddingRight="@dimen/abc_select_dialog_padding_start_material"
-    android:padding="@dimen/abc_dialog_padding_material">
+    android:paddingTop="@dimen/abc_dialog_padding_material"
+    android:paddingBottom="@dimen/abc_dialog_padding_material">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.DialogWindowTitle"
         android:text="@string/dialog_addnetwork_title"
         android:id="@+id/tv_addnetwork_title"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        ><requestFocus /></TextView>
+        android:paddingLeft="@dimen/abc_select_dialog_padding_start_material"
+        android:paddingRight="@dimen/abc_select_dialog_padding_start_material"><requestFocus /></TextView>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/scrollView">
+        android:id="@+id/scrollView"
+        android:paddingLeft="@dimen/abc_select_dialog_padding_start_material"
+        android:paddingRight="@dimen/abc_select_dialog_padding_start_material">
 
         <LinearLayout
             android:orientation="vertical"
@@ -55,6 +57,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_addnetwork_eapmethod"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:entries="@array/EapMethod"
                 android:entryValues="@array/EapMethodValues" />
 
@@ -71,6 +74,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_addnetwork_phase2authentication"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:entries="@array/Phase2Method"
                 android:entryValues="@array/Phase2MethodValues" />
 
@@ -86,6 +90,7 @@
             <Spinner
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:id="@+id/sp_addnetwork_cacertificate" />
 
             <TextView
